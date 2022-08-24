@@ -1,22 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Invention Template</title>
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
-</head>
+
+<!--Head contiene estilos y boostrap-->
+<?php require_once ("../librerias/head.php"); ?>
+
 <body>
 <div id="wrapper">
   <div id="content">
+
     <!-- HEADER -->
     <?php include("../librerias/header.php"); ?>
 
-
+    <!--Barra Titulo-->
     <div id="mainimg">
       <h3>inventions</h3>
       <h4>for a wireless world</h4>
     </div>
+
+    <!--Content Area-->
     <div id="contentarea">
+
+      <!--Barra izquierda-->
       <div id="leftbar">
         <h2>hello!</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut id nisl nec leo congue fringilla. Suspendisse potenti. Phasellus sed velit eget sapien interdum ultrices. Nullam nec magna. Maecenas cursus. Etiam sapien neque, auctor eu, volutpat at, condimentum et, odio. Morbi id lorem. Nam urna ante, venenatis sed, molestie eu, dictum sit amet, tellus. Phasellus pellentesque magna vitae elit. In dignissim eleifend odio. Curabitur at libero. Donec est justo, pellentesque eu, vulputate feugiat, ultrices quis, nunc. Sed neque. Nulla egestas, risus id consectetuer ultrices, ante turpis posuere ligula, ac pulvinar tortor dui ac odio. Curabitur auctor urna sed purus. In varius.</p>
@@ -26,20 +30,14 @@
         <a href="#">more ></a><br />
         <br />
       </div>
-      <div id="rightbar">
-        <h2>latest news</h2>
-        <p><span class="orangetext">12/08/2006</span><br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. <br />
-          <br />
-          <span class="orangetext">10/08/2006</span><br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. <br />
-          <br />
-          <span class="orangetext">28/07/2006</span><br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. </p>
-      </div>
+      
+      <!--Barra Derecha-->
+      <?php include ("../librerias/barraDerecha.php"); ?>
+
     </div>
+
     <!--BOTTOM-->
-    <?php include ("../librerias/bottom.php"); ?>
+    <?php require_once ("../librerias/bottom.php"); ?>
 
 
   </div>
