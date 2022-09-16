@@ -52,8 +52,17 @@ class personas
         
     }
 
+    public static function borrar ($id)
+    {
+        if (!empty($_SESSION["Personas"][$id]))
+        {
+            unset($_SESSION["Personas"][$id]);
+        }
+    }
+
     public static function mostrar ()
     {
+        $cantP = 0;
         //Apertura de tabla
         echo 
         '<table class="table table-striped">
@@ -63,6 +72,7 @@ class personas
             <th scope="col">Nombre</th>
             <th scope="col">Telefono</th>
             <th scope="col">Direccion</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>';
@@ -76,12 +86,13 @@ class personas
 
             echo 
             '<tr>
-                <th scope="row">'.($key+1).'</th>
-                <td>'.$p -> nombre.'</td>
-                <td>'.$p -> telefono.'</td>
-                <td>'.$p -> direccion.'</td>
+                <th scope="row" style="vertical-align: middle;">'.($key+1).'</th>
+                <td style="vertical-align: middle;">'.$p -> nombre.'</td>
+                <td style="vertical-align: middle;">'.$p -> telefono.'</td>
+                <td style="vertical-align: middle;">'.$p -> direccion.'</td>
+                <td style="vertical-align: middle;"><a href="?id='.($key+1).'" style="display: inline-table;"><img src="../images/Borrar.png" width="30"></a></td>
             </tr>';
-
+            $cantP++;
         }
 
 
@@ -90,6 +101,10 @@ class personas
         echo 
         "</tbody>
         </table>";
+
+        //Pie de Tabla
+        echo "<h3>Cantidad de Personas: $cantP</h3>";
+        echo '<h3><a href="?tabla=290101" style="font-size: large;">Vaciar Tabla</a></h3>';
 
     }
 
@@ -101,6 +116,23 @@ class personas
 if (!empty($_POST))
 {
     Personas :: arnuevo($_POST);
+}
+
+if (!empty($_GET))
+{
+    if (!empty($_GET["id"]))
+    {
+        Personas :: borrar($_GET["id"]-1);
+    }
+
+    if (!empty($_GET["tabla"]))
+    {
+        if ($_GET["tabla"]=290101)
+        {
+            unset($_SESSION["Personas"]);
+        }
+    }
+    
 }
 
 ?>

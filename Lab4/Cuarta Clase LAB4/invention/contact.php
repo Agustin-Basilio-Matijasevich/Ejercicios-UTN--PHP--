@@ -36,7 +36,7 @@
           </div>
           <div class="mb-3">
             <label for="direccion" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Puflito 345" pattern="[a-zA-Z]{2,} .[0-9]{0,}" required>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Puflito 345" pattern="[a-zA-Z.-_]{2,} .[0-9]{0,}" required>
           </div>
           <div class="mb-3">
             <input type="submit" class="form-control" id="boton-carga" value="Aceptar">
