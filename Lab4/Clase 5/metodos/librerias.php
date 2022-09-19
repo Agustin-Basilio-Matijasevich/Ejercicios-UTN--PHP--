@@ -52,12 +52,25 @@ class personas
         
     }
 
+    public static function armodifica ($array)
+    {
+        $_SESSION["Personas"][$array["id"]] = json_encode(new persona($array["nombre"], $array["telefono"], $array["direccion"]));
+    }
+
     public static function borrar ($id)
     {
         if (!empty($_SESSION["Personas"][$id]))
         {
             unset($_SESSION["Personas"][$id]);
         }
+    }
+
+    public static function getPersona ($id)
+    {
+            if (isset($_SESSION["Personas"][$id]) && !empty($_SESSION["Personas"][$id]))
+            {
+                return (persona :: casteo(json_decode($_SESSION["Personas"][$id])));
+            }
     }
 
     public static function mostrar ()
@@ -90,7 +103,10 @@ class personas
                 <td style="vertical-align: middle;">'.$p -> nombre.'</td>
                 <td style="vertical-align: middle;">'.$p -> telefono.'</td>
                 <td style="vertical-align: middle;">'.$p -> direccion.'</td>
-                <td style="vertical-align: middle;"><a href="?id='.($key+1).'" style="display: inline-table;"><img src="../images/Borrar.png" width="30"></a></td>
+                <td style="vertical-align: middle;">
+                <a href="contact.php?id_actualiza='.($key+1).'" style="display: inline-table;"><img src="../images/editar.png" width="30"></a>
+                <a href="?id='.($key+1).'" style="display: inline-table;"><img src="../images/Borrar.png" width="30"></a>
+                </td>
             </tr>';
             $cantP++;
         }
@@ -104,7 +120,7 @@ class personas
 
         //Pie de Tabla
         echo "<h3>Cantidad de Personas: $cantP</h3>";
-        echo '<h3><a href="?tabla=290101" style="font-size: large;">Vaciar Tabla</a></h3>';
+        echo '<button type="button" class="btn btn-danger" onclick="Vaciar_Tabla()">Vaciar Tabla</button>';
 
     }
 
@@ -115,7 +131,14 @@ class personas
 //Procesamiento de datos
 if (!empty($_POST))
 {
-    Personas :: arnuevo($_POST);
+    if (!empty($_POST["id"]))
+    {
+        Personas :: armodifica($_POST);
+    }
+    else
+    {
+        Personas :: arnuevo($_POST);
+    }
 }
 
 if (!empty($_GET))
