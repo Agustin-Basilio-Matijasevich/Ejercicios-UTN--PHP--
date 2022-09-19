@@ -31,7 +31,7 @@ el once es un modificador que provoca que dentro de este .php no se vuelva a car
       }
 
       ?>
-
+      
       </div>
       <div id="rightbar">
         <h2>latest news</h2>

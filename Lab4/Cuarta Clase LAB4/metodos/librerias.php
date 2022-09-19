@@ -104,7 +104,7 @@ class personas
 
         //Pie de Tabla
         echo "<h3>Cantidad de Personas: $cantP</h3>";
-        echo '<h3><a href="?tabla=290101" style="font-size: large;">Vaciar Tabla</a></h3>';
+        echo '<button type="button" class="btn btn-danger" onclick="Vaciar_Tabla()">Vaciar Tabla</button>';
 
     }
 

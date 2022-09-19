@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <!--Head contiene estilos y boostrap-->
@@ -32,11 +32,11 @@
           </div>
           <div class="mb-3">
             <label for="telefono" class="form-label">Telefono</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="3624163569" pattern="[0-9]{4}[0-9]{6}" required>
+            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="3624163569" pattern="[0-9]{4}[0-9]{6}" title="Ingrese un Numero de Telefono Valido" required>
           </div>
           <div class="mb-3">
             <label for="direccion" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Puflito 345" pattern="[a-zA-Z.-_]{2,} .[0-9]{0,}" required>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Puflito 345" pattern="[a-zA-Z.-_ñ]{2,}.*. .[0-9]{0,}" title="Ingrese una Direccion Valida" required>
           </div>
           <div class="mb-3">
             <input type="submit" class="form-control" id="boton-carga" value="Aceptar">
