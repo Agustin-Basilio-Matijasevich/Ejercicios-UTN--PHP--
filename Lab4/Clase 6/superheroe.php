@@ -1,8 +1,10 @@
 <?php
 
 include ("Iplatudo.php");
+include ("Isuperfuerza.php");
+include ("superheroe_acuatico.php");
 
-class superheroe extends persona implements Iplatudo
+class superheroe extends persona implements Iplatudo, Isuperfuerza
 {
     public $superPoder;
     
@@ -18,13 +20,18 @@ class superheroe extends persona implements Iplatudo
     {
         parent :: ver();
 
-        echo ". Con el superpoder de ".$this -> superPoder.". ".$this -> tenerPlata();
+        echo ". Con el superpoder de ".$this -> superPoder.". ".$this -> tenerPlata().". ".$this -> tenerSuperfuerza();
 
     }
 
     function tenerPlata()
     {
-        return $this -> nombre." Pertenece a los supereroes con Plata";
+        return $this -> nombre." Pertenece a los superheroes con Plata";
+    }
+
+    function tenerSuperfuerza()
+    {
+        return $this -> nombre." Pertenece a los superheroes con SuperFuerza";
     }
 
 }

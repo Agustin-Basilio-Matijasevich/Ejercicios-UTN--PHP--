@@ -1,10 +1,12 @@
 <?php
 
-    class listaP
+    //include ("Isuperfuerza.php");  Ya incluido en persona a traves de superheroe
+
+    class listaSP
     {
         public $lista;
 
-        public function nuevo(persona $p)
+        public function nuevo(Isuperfuerza $p)
         {
             $this -> lista[$p -> id] = $p;
         }
@@ -20,7 +22,5 @@
         }
 
     }
-
-    include ("listaSP.php");
 
 ?>
