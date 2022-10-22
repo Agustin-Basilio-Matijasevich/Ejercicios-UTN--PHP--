@@ -1,0 +1,3 @@
+papa,banana,manzana
+gato,perro,humano
+loca,perra,dea

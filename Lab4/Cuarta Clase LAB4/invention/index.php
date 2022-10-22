@@ -43,6 +43,8 @@ el once es un modificador que provoca que dentro de este .php no se vuelva a car
           <br />
           <span class="orangetext">28/07/2006</span><br />
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. </p>
+        <?php $items = array("papa","manzana","frutilla");
+        echo $items[1]; ?>
       </div>
     </div>
     <!--BOTTOM-->
