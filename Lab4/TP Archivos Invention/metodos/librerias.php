@@ -2,6 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
+require_once ("archivos.php");
+
 function calcular ($a, $b)
 {
     return $a+$b;
@@ -49,12 +51,13 @@ class personas
     public static function arnuevo ($array) //Identifica los datos segun: Nombre=nombre, Telefono=telefono, Direccion=direccion.
     {
         $_SESSION["Personas"][] = json_encode(new persona($array["nombre"], $array["telefono"], $array["direccion"]));
-        
+        grabar($_SESSION["Personas"]);
     }
 
     public static function armodifica ($array)
     {
         $_SESSION["Personas"][$array["id"]-1] = json_encode(new persona($array["nombre"], $array["telefono"], $array["direccion"]));
+        grabar($_SESSION["Personas"]);
     }
 
     public static function borrar ($id)
@@ -62,6 +65,7 @@ class personas
         if (!empty($_SESSION["Personas"][$id]))
         {
             unset($_SESSION["Personas"][$id]);
+            grabar($_SESSION["Personas"]);
         }
     }
 
@@ -153,6 +157,11 @@ if (!empty($_GET))
         if ($_GET["tabla"]=290101)
         {
             unset($_SESSION["Personas"]);
+            
+            $f = fopen ("../ArchivosCSV/Personas.csv", "w");
+            fwrite ($f, "");
+            fclose($f);
+
         }
     }
     
